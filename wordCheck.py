@@ -1,5 +1,5 @@
 
-def wordCheck(vals, hand):
+def word_check(vals, hand):
     if len(vals)==0:
         return False
     temp=hand.copy()
