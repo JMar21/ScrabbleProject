@@ -9,4 +9,6 @@ def check_max_score(cursor, hand):
           "ORDER BY Value DESC".format(regex)
     cursor.execute(query)
     result = cursor.fetchall()
+    index = 0
+
     return

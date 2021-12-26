@@ -24,6 +24,8 @@ if __name__ == '__main__':
     check_max_score.check_max_score(cursor,hand)
     if wordCheck.word_check(response, hand) and result:
         print("Valid word entered with score "+str(score))
+        for val in response:
+            hand[val]-=1
     else:
         print("Invalid word entered")
     conn.close()

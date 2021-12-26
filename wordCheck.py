@@ -8,6 +8,4 @@ def word_check(vals, hand):
             return False
         else:
             temp[val]-=1
-    for val in vals:
-        hand[val]-=1
     return True
