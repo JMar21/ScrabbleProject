@@ -1,4 +1,6 @@
+from wordCheck import word_check
 #Given a mysql cursor and hand, find the maximum possible score for the given letters
+
 def check_max_score(cursor, hand):
     regex="^["
     for val in hand:
@@ -10,5 +12,11 @@ def check_max_score(cursor, hand):
     cursor.execute(query)
     result = cursor.fetchall()
     index = 0
-
+    found = False
+    while not found:
+        if word_check(result[index][0],hand):
+            return list(result[index])
+            found = True
+        else:
+            index+=1
     return

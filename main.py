@@ -11,7 +11,7 @@ hand={}
 entered=False
 
 if __name__ == '__main__':
-    for i in range(1,6):
+    for i in range(1,8):
         letter = scrabbleBag.draw()
         hand[letter] = hand.get(letter , 0)+1
     print("Your hand is "+str(hand))
@@ -24,6 +24,10 @@ if __name__ == '__main__':
     check_max_score.check_max_score(cursor,hand)
     if wordCheck.word_check(response, hand) and result:
         print("Valid word entered with score "+str(score))
+        max=check_max_score.check_max_score(cursor,hand)
+        maxword=max[0]
+        maxscore=max[1]
+        print("Maximum possible score was "+str(maxscore)+" with the word "+str(maxword))
         for val in response:
             hand[val]-=1
     else:
